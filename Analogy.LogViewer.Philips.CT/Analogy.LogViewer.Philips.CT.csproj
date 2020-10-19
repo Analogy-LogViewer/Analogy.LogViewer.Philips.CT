@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<ProjectGuid>{B1A57735-3548-496E-8AD0-469DD713D7CF}</ProjectGuid>
+		<RootNamespace>Analogy.LogViewer.Philips.CT</RootNamespace>
+		<AssemblyName>Analogy.LogViewer.Philips.CT</AssemblyName>
+		<TargetFramework>net471</TargetFramework>
+		<AssemblyTitle>Analogy.Implementation.Philips</AssemblyTitle>
+		<Company>Analogy.LogViewer</Company>
+		<Product>Analogy.LogViewer.Philips.CT</Product>
+		<Copyright>Copyright © Lior Banai 2019</Copyright>
+		<OutputPath>bin\$(Configuration)\</OutputPath>
+		<Nullable>enable</Nullable>
+		<LangVersion>8.0</LangVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugType>full</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+	</PropertyGroup>
+	<PropertyGroup>
+		<PackageId>Analogy.LogViewer.Philips.CT</PackageId>
+		<Authors>Lior Banai</Authors>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="System.Design" />
+		<Reference Include="System.Windows.Forms" />
+		<Reference Include="System.Data.DataSetExtensions" />
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="System.Net.Http" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="FixFileUC.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="FixFileUC.Designer.cs">
+			<DependentUpon>FixFileUC.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DesignTime>True</DesignTime>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="FixFileUC.resx">
+			<DependentUpon>FixFileUC.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Utils.resx">
+			<DependentUpon>Utils.cs</DependentUpon>
+			<SubType>Designer</SubType>
+		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\PageSetup_16x16.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\PageSetup_32x32.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\Database_16x16.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\Database_32x32.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\DeleteDataSource_16x16.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\DeleteDataSource_32x32.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\iqon.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\Iqon_Spectral.jpg" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\Iqon_Spectral32x32.jpg" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\serverOff.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\ServerON.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.7.5" />
+		<PackageReference Include="Analogy.LogViewer.Template" Version="1.6.7" />
+	</ItemGroup>
+</Project>
