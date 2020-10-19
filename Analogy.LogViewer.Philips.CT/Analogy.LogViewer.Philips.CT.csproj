@@ -1,16 +1,18 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 	<PropertyGroup>
-		<ProjectGuid>{B1A57735-3548-496E-8AD0-469DD713D7CF}</ProjectGuid>
 		<RootNamespace>Analogy.LogViewer.Philips.CT</RootNamespace>
 		<AssemblyName>Analogy.LogViewer.Philips.CT</AssemblyName>
-		<TargetFramework>net471</TargetFramework>
-		<AssemblyTitle>Analogy.Implementation.Philips</AssemblyTitle>
+		<TargetFrameworks>net471;net472;netcoreapp3.1</TargetFrameworks>
+		<AssemblyTitle>Analogy.LogViewer.Philips.CT</AssemblyTitle>
 		<Company>Analogy.LogViewer</Company>
+		<UseWindowsForms>true</UseWindowsForms>
 		<Product>Analogy.LogViewer.Philips.CT</Product>
 		<Copyright>Copyright © Lior Banai 2019</Copyright>
 		<OutputPath>bin\$(Configuration)\</OutputPath>
 		<Nullable>enable</Nullable>
 		<LangVersion>8.0</LangVersion>
+		<OutputType>Library</OutputType>
+		<NeutralLanguage>en-US</NeutralLanguage>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<DebugType>full</DebugType>
@@ -22,13 +24,6 @@
 		<PackageId>Analogy.LogViewer.Philips.CT</PackageId>
 		<Authors>Lior Banai</Authors>
 	</PropertyGroup>
-	<ItemGroup>
-		<Reference Include="System.Design" />
-		<Reference Include="System.Windows.Forms" />
-		<Reference Include="System.Data.DataSetExtensions" />
-		<Reference Include="Microsoft.CSharp" />
-		<Reference Include="System.Net.Http" />
-	</ItemGroup>
 	<ItemGroup>
 		<Compile Update="FixFileUC.cs">
 			<SubType>UserControl</SubType>
@@ -87,5 +82,9 @@
 	<ItemGroup>
 		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.7.5" />
 		<PackageReference Include="Analogy.LogViewer.Template" Version="1.6.7" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="CustomActions\" />
 	</ItemGroup>
 </Project>
