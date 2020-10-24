@@ -80,7 +80,7 @@
 		<None Include="Resources\ServerON.png" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.7.5" />
+		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.7.9.3" />
 		<PackageReference Include="Analogy.LogViewer.Template" Version="1.6.7" />
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
 	</ItemGroup>
