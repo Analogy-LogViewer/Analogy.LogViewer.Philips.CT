@@ -23,6 +23,7 @@
 	<PropertyGroup>
 		<PackageId>Analogy.LogViewer.Philips.CT</PackageId>
 		<Authors>Lior Banai</Authors>
+		<Version>1.0.1</Version>
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Update="FixFileUC.cs">
@@ -80,8 +81,8 @@
 		<None Include="Resources\ServerON.png" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.7.5" />
-		<PackageReference Include="Analogy.LogViewer.Template" Version="1.6.7" />
+		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.7.9.5" />
+		<PackageReference Include="Analogy.LogViewer.Template" Version="1.6.10" />
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
 	</ItemGroup>
 	<ItemGroup>
