@@ -41,7 +41,9 @@ namespace Analogy.LogViewer.Philips.CT
                 {
                     lines.Add(line);
                     if (token.IsCancellationRequested)
+                    {
                         break;
+                    }
                 }
             }
 

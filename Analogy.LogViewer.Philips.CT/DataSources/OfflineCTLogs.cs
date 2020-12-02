@@ -55,7 +55,10 @@ namespace Analogy.LogViewer.Philips.CT.DataSources
         {
             List<FileInfo> files = dirInfo.GetFiles("defaultFile_*.xml").ToList();
             if (!recursive)
+            {
                 return files;
+            }
+
             try
             {
                 foreach (DirectoryInfo dir in dirInfo.GetDirectories())

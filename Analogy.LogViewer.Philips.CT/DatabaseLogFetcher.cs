@@ -157,7 +157,10 @@ namespace Analogy.LogViewer.Philips.CT
         {
             isDisabled = true;
             if (!string.IsNullOrEmpty(viewName))
+            {
                 ExecuteSql("DROP VIEW " + viewName);
+            }
+
             viewName = null;
         }
 
@@ -307,7 +310,9 @@ namespace Analogy.LogViewer.Philips.CT
                     else
                     {
                         if (row[LogViewerLogicConstants.DBBinaryDataColumn].Equals(DBNull.Value))
+                        {
                             newRow[LogViewerLogicConstants.DataGridBinaryDataColumn] = string.Empty;
+                        }
                         else
                         {
                             byte[] b;
@@ -391,37 +396,49 @@ namespace Analogy.LogViewer.Philips.CT
                                 {
                                     string val = xr.ReadElementString();
                                     if (val.Length > 0)
+                                    {
                                         newRow[LogViewerLogicConstants.DataGridProcessIDColumn] = int.Parse(val);
+                                    }
                                 }
                                 if (xr.IsStartElement(LogViewerLogicConstants.DBProcessNameColumn))
                                 {
                                     string val = xr.ReadElementString();
                                     if (val.Length > 0)
+                                    {
                                         newRow[LogViewerLogicConstants.DataGridProcessNameColumn] = val;
+                                    }
                                 }
                                 if (xr.IsStartElement(LogViewerLogicConstants.DBThreadIDColumn))
                                 {
                                     string val = xr.ReadElementString();
                                     if (val.Length > 0)
+                                    {
                                         newRow[LogViewerLogicConstants.DataGridThreadIDColumn] = int.Parse(val);
+                                    }
                                 }
                                 if (xr.IsStartElement(LogViewerLogicConstants.DBFileNameColumn))
                                 {
                                     string val = xr.ReadElementString();
                                     if (val.Length > 0)
+                                    {
                                         newRow[LogViewerLogicConstants.DataGridFileNameColumn] = val;
+                                    }
                                 }
                                 if (xr.IsStartElement("Method"))
                                 {
                                     string val = xr.ReadElementString();
                                     if (val.Length > 0)
+                                    {
                                         newRow[LogViewerLogicConstants.DataGridMethodNameColumn] = val;
+                                    }
                                 }
                                 if (xr.IsStartElement("Linenumber"))
                                 {
                                     string val = xr.ReadElementString();
                                     if (val.Length > 0)
+                                    {
                                         newRow[LogViewerLogicConstants.DataGridLineNumberColumn] = int.Parse(val);
+                                    }
                                 }
                                 if (xr.IsStartElement(LogViewerLogicConstants.DBStackTraceColumn))
                                 {
@@ -2373,7 +2390,11 @@ namespace Analogy.LogViewer.Philips.CT
         /// <returns></returns>
         public string GetValue(int key)
         {
-            if (key == 4) key = 3;
+            if (key == 4)
+            {
+                key = 3;
+            }
+
             if (intLookUp.ContainsKey(key))
             {
                 return intLookUp[key];

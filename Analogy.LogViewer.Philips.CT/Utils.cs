@@ -37,7 +37,9 @@ namespace Analogy.LogViewer.Philips.CT
         private static bool ContainsGuid(string message)
         {
             if (string.IsNullOrEmpty(message))
+            {
                 return false;
+            }
 
             string[] spliter = { Environment.NewLine };
             string[] logData = message.Split(spliter, StringSplitOptions.None);
@@ -119,7 +121,10 @@ namespace Analogy.LogViewer.Philips.CT
                 .Concat(dirInfo.GetFiles("*.nlog")).Concat(dirInfo.GetFiles("*.json"))
                 .Concat(dirInfo.GetFiles("defaultFile_*.xml")).Concat(dirInfo.GetFiles("*.evtx")).ToList();
             if (!recursive)
+            {
                 return files;
+            }
+
             try
             {
                 foreach (DirectoryInfo dir in dirInfo.GetDirectories())

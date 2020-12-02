@@ -120,7 +120,9 @@ namespace Analogy.LogViewer.Philips.CT
                 foreach (KeyValuePair<int, string> aPair in eModuleIDMap)
                 {
                     if (aPair.Value == moduleName)
+                    {
                         return aPair.Key;
+                    }
                 }
             }
             return -1;

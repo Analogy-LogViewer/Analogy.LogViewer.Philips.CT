@@ -71,7 +71,9 @@ namespace Analogy.LogViewer.Philips.CT
             string RemoveInvalidXmlChars(string text)
             {
                 if (string.IsNullOrEmpty(text))
+                {
                     return text;
+                }
 
                 int length = text.Length;
                 StringBuilder stringBuilder = new StringBuilder(length);
@@ -130,9 +132,10 @@ namespace Analogy.LogViewer.Philips.CT
                        }
 
                        if (loaded)
+                       {
                            MessageBox.Show($"File was fixed and saved to {final}", "File Fixed Successfully",
-                                MessageBoxButtons.OK);
-
+                               MessageBoxButtons.OK);
+                       }
                    }
                }
                return messages;
@@ -235,8 +238,9 @@ namespace Analogy.LogViewer.Philips.CT
                             break;
                         }
                         else if (allOldFields)
+                        {
                             break;
-                        
+                        }
                     } // while
 
                     messages.Add(logM);
@@ -358,7 +362,9 @@ namespace Analogy.LogViewer.Philips.CT
                                      break;
                                  }
                                  else if (allOldFields)
+                                 {
                                      break;
+                                 }
                              } // while
 
                              messages.Add(logM);

@@ -239,7 +239,9 @@ namespace Analogy.LogViewer.Philips.CT
                     else
                     {
                         if (dataRow["Binary Data"].Equals(DBNull.Value))
+                        {
                             dataRow["BinData"] = string.Empty;
+                        }
                         else
                         {
                             byte[] b;
@@ -311,37 +313,49 @@ namespace Analogy.LogViewer.Philips.CT
                                 {
                                     string val = xr.ReadElementString();
                                     if (val.Length > 0)
+                                    {
                                         dataRow["Process ID"] = int.Parse(val);
+                                    }
                                 }
                                 if (xr.IsStartElement("ProcessName"))
                                 {
                                     string val = xr.ReadElementString();
                                     if (val.Length > 0)
+                                    {
                                         dataRow["Process Name"] = val;
+                                    }
                                 }
                                 if (xr.IsStartElement("ThreadID"))
                                 {
                                     string val = xr.ReadElementString();
                                     if (val.Length > 0)
+                                    {
                                         dataRow["Thread ID"] = int.Parse(val);
+                                    }
                                 }
                                 if (xr.IsStartElement("FileName"))
                                 {
                                     string val = xr.ReadElementString();
                                     if (val.Length > 0)
+                                    {
                                         dataRow["File Name"] = val;
+                                    }
                                 }
                                 if (xr.IsStartElement("Method"))
                                 {
                                     string val = xr.ReadElementString();
                                     if (val.Length > 0)
+                                    {
                                         dataRow["Method Name"] = val;
+                                    }
                                 }
                                 if (xr.IsStartElement("Linenumber"))
                                 {
                                     string val = xr.ReadElementString();
                                     if (val.Length > 0)
+                                    {
                                         dataRow["Line Number"] = int.Parse(val);
+                                    }
                                 }
                                 if (xr.IsStartElement("StackTrace"))
                                 {
